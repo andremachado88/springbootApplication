@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sprint Boot</title>
+
+<script
+  src="http://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+	<p id="exemplo">Texto</p>
+	<script type="text/javascript">
+		$(document).ready (
+			function () 
+			{
+				$.ajax({
+					url : "http://localhost:8080/springboot/usuario/",
+					method:"GET"
+				}).then (function(data,status,info){
+					document.getElementById("exemplo").innerHTML = data;
+					alert(data[0].login)
+				});	
+			}	
+			
+		);
+				
+		</script>
+		
+	</script>
+</body>
+</html>
